@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>シンプルタイマー</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <h1>シンプルタイマー</h1>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="timer">タイマー</button>
+      <button class="tab-btn" data-tab="stopwatch">ストップウォッチ</button>
+    </div>
+
+    <section id="timer" class="panel active">
+      <div class="display" id="timer-display">00:00</div>
+
+      <div class="presets">
+        <button class="preset-btn" data-seconds="60">1分</button>
+        <button class="preset-btn" data-seconds="180">3分</button>
+        <button class="preset-btn" data-seconds="300">5分</button>
+        <button class="preset-btn" data-seconds="600">10分</button>
+      </div>
+
+      <div class="custom-input">
+        <input type="number" id="minutes-input" min="0" max="999" placeholder="分">
+        <input type="number" id="seconds-input" min="0" max="59" placeholder="秒">
+        <button id="set-btn">セット</button>
+      </div>
+
+      <div class="controls">
+        <button id="timer-start" class="control-btn primary">開始</button>
+        <button id="timer-pause" class="control-btn" disabled>一時停止</button>
+        <button id="timer-reset" class="control-btn">リセット</button>
+      </div>
+    </section>
+
+    <section id="stopwatch" class="panel">
+      <div class="display" id="stopwatch-display">00:00.0</div>
+
+      <div class="controls">
+        <button id="sw-start" class="control-btn primary">開始</button>
+        <button id="sw-pause" class="control-btn" disabled>一時停止</button>
+        <button id="sw-reset" class="control-btn">リセット</button>
+        <button id="sw-lap" class="control-btn" disabled>ラップ</button>
+      </div>
+
+      <ul id="lap-list"></ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
